@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">Biblioteca Digital — Frontend</h1>
 
-## Getting Started
+<p align="center">
+  Interface web do sistema de biblioteca digital acadêmico desenvolvido para a disciplina de POO.
+</p>
 
-First, run the development server:
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+
+<p align="center">
+  <img alt="Biblioteca Digital" src="./public/layout.jpeg" width="100%">
+</p>
+
+## Tecnologias
+
+- **Next.js 16.2.6** — framework React com App Router
+- **React 19** — biblioteca de interface
+- **TypeScript** — tipagem estática
+- **Tailwind CSS v4** — estilização utilitária
+
+## Estrutura do projeto
+
+```
+biblioteca-front/
+├── app/
+│   ├── layout.tsx           ← layout global
+│   ├── page.tsx             ← dashboard principal
+│   ├── livros/page.tsx      ← gestão de livros
+│   ├── usuarios/page.tsx    ← gestão de usuários
+│   └── emprestimos/page.tsx ← empréstimos e devoluções
+├── components/
+│   └── Navbar.tsx           ← barra de navegação
+└── lib/
+    └── api.ts               ← todas as chamadas HTTP ao backend
+```
+
+## Como rodar localmente
+
+### Pré-requisitos
+
+- Node.js 18 ou superior
+- npm
+
+### Passo a passo
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/pedroqueirozs/biblioteca_front.git
+cd biblioteca_front
+```
+
+2. **Instale as dependências:**
+
+```bash
+npm install
+```
+
+3. **Configure a variável de ambiente:**
+
+Crie um arquivo `.env.local` na raiz do projeto:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8080
+```
+
+> Para apontar para o backend em produção, use:
+> `NEXT_PUBLIC_API_URL=https://biblioteca-backend-13i8.onrender.com`
+
+4. **Inicie o servidor de desenvolvimento:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts disponíveis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera o build de produção |
+| `npm run start` | Inicia o servidor em modo produção |
+| `npm run lint` | Executa o linter |
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+O frontend está hospedado na **Vercel**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+URL de produção: `https://biblioteca-front-eosin.vercel.app`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Variável de ambiente configurada no painel da Vercel:
 
-## Deploy on Vercel
+```
+NEXT_PUBLIC_API_URL=https://biblioteca-backend-13i8.onrender.com
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">Feito por Pedro Douglas G. Queiroz</p>
